@@ -30,7 +30,9 @@ Route::middleware(['auth', 'verified'])
     Route::resource('projects', ProjectController::class)->parameters([
         'projects' => 'project:slug'
     ]);
-    Route::resource('types', TypeController::class);
+    Route::resource('types', TypeController::class)->parameters([
+        'types' => 'type:slug'
+    ]);
 });
 
 Route::middleware('auth')->group(function () {

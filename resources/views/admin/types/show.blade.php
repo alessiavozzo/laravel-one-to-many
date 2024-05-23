@@ -7,8 +7,9 @@
                 {{ $type->name }}
             </div>
             <div class="card-body">
+                <div class="card-text">{{ $type->id }}</div>
                 <div class="card-text">{{ $type->slug }}</div>
-                <a href="{{ route('admin.types.show', $type) }}" class="btn btn-primary">Details</a>
+                <div class="card-text">{{ $type->description }}</div>
             </div>
         </div>
     </div>

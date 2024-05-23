@@ -16,6 +16,17 @@
                 @enderror
             </div>
 
+            {{-- description --}}
+            <div class="mb-3">
+                <label for="description"
+                    class="form-label @error('description') is-invalid @enderror"><strong>Description</strong></label>
+                <textarea class="form-control" name="description" id="description" placeholder="A brief text describing the project"
+                    rows="8">{{ old('description') }}</textarea>
+                @error('description')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
             <button class="btn btn-primary" type="submit">Add</button>
 
         </form>

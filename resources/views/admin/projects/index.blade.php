@@ -26,6 +26,7 @@
                             {{-- <th scope="col">TOOLS</th> --}}
                             <th scope="col">PROJECT LINK</th>
                             <th scope="col">GITHUB LINK</th>
+                            <th scope="col">TYPE</th>
                             <th scope="col">CREATION DATE</th>
                             <th scope="col">ACTIONS</th>
                         </tr>
@@ -53,6 +54,16 @@
                                 <td><a class="text-decoration-none" href="{{ $project->project_link }}">Project link</a>
                                 </td>
                                 <td><a class="text-decoration-none" href="{{ $project->github_link }}">Github link</a></td>
+
+                                <td>
+                                    @if ($project->type)
+                                        <a class="text-decoration-none"
+                                            href="{{ route('admin.types.show', $project->type) }}">{{ $project->type->name }}</a>
+                                    @else
+                                        <p>no type</p>
+                                    @endif
+                                </td>
+
                                 <td>{{ $project->creation_date }}</td>
                                 <td style="width: 15%">
                                     <a class="btn btn-primary" href="{{ route('admin.projects.show', $project) }}">
