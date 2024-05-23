@@ -4,8 +4,10 @@
     {{-- @dd($types) --}}
     <div class="container">
 
+        @include('admin.partials.session-messages')
+
         <a class="btn btn-primary" href="{{ route('admin.types.create') }}">Add new</a>
-        <div class="row">
+        <div class="row row-cols-3">
             @forelse ($types as $type)
                 <div class="col">
                     <div class="card">

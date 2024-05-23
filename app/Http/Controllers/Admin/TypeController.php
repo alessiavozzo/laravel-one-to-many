@@ -60,7 +60,11 @@ class TypeController extends Controller
      */
     public function update(UpdateTypeRequest $request, Type $type)
     {
-        //
+        $validated=$request->validated();
+        $slug=Str::slug($validated['name'], '-');
+        $validated['slug'] = $slug;
+        $type->update($validated);
+        return to_route('admin.types.index')->with('message', "Type $type->name updated successfully");
     }
 
     /**
