@@ -37,6 +37,8 @@
                     <p class="card-text"><strong>DESCRIPTION: </strong>{{ $project->description }}</p>
                     {{-- <p class="card-text"><strong>TOOLS: </strong>{{ $project->tools }}</p> --}}
                     <p class="card-text"><strong>CREATION DATE: </strong>{{ $project->creation_date }}</p>
+                    <p class="card-text"><strong>TYPE: </strong>{{ $project->type ? $project->type->name : 'Not defined' }}
+                    </p>
 
 
                     @if ($project->preview)
