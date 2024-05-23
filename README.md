@@ -16,3 +16,6 @@ Aggiungere le operazioni CRUD per il model Type, in modo da gestire le tipologie
 
 NB Ho clonato la repo a partire da laravel-auth, rendendo la repo laravel-auth una repo template.
 
+Un progetto può essere di un solo tipo, ma un tipo può appartenere a più progetti.
+php artisan make:migration add_type_id_foreign_key_to_projects_table
+
