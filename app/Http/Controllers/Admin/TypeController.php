@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\ColorGenerator;
 use App\Models\Type;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
@@ -35,7 +36,7 @@ class TypeController extends Controller
         $validated=$request->validated();
         $slug=Str::slug($validated['name'], '-');
         $validated['slug'] = $slug;
-        $color= $this->randomColor();
+        $color= ColorGenerator::randomColor();
         $validated['color'] = $color;
         Type::create($validated);
         return to_route('admin.types.index')->with('message', 'New type created successfully');
@@ -78,8 +79,8 @@ class TypeController extends Controller
         return to_route('admin.types.index')->with('message', "Type $type->name deleted successfully");
     }
 
-    private function randomColor(){
+    /* private function randomColor(){
         return '#' . dechex(rand(0, 10000000));
-    }
+    } */
 }
 
