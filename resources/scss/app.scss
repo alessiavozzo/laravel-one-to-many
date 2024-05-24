@@ -1,12 +1,5 @@
 @use './partials/variables' as *;
 @use './partials/sidebar';
 @use './partials/navbar';
+@use './partials/projects';
 @import '~bootstrap/scss/bootstrap';
-
-.bg-section-dark {
-    background-color: $section-header-bg;
-}
-
-.bg-section {
-    background-color: $section-bg;
-}

@@ -35,6 +35,8 @@ class TypeController extends Controller
         $validated=$request->validated();
         $slug=Str::slug($validated['name'], '-');
         $validated['slug'] = $slug;
+        $color= $this->randomColor();
+        $validated['color'] = $color;
         Type::create($validated);
         return to_route('admin.types.index')->with('message', 'New type created successfully');
     }
@@ -75,4 +77,9 @@ class TypeController extends Controller
         $type->delete();
         return to_route('admin.types.index')->with('message', "Type $type->name deleted successfully");
     }
+
+    private function randomColor(){
+        return '#' . dechex(rand(0, 10000000));
+    }
 }
+

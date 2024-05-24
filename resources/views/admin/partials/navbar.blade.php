@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md px-4">
+<nav id="top-bar" class="navbar navbar-expand-md px-4">
 
     <a class="navbar-brand d-none d-md-flex align-items-center text-white home-btn" href="{{ url('/') }}">
         <i class="fa-solid fa-house"></i>

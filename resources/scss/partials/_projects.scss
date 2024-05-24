@@ -1,0 +1,33 @@
+@use "./variables" as *;
+
+.projects-card {
+    background-color: $dash-dark !important;
+
+    .card-header {
+        background-color: $dash-bg-title;
+
+        .add-btn {
+            background-image: linear-gradient(to right, $dash-portfolio-light, $dash-portfolio-dark);
+            color: $dash-text-light;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                background-color: $dash-darkest;
+                border: 1px solid $dash-portfolio-light;
+                background-image: none;
+            }
+        }
+    }
+}
+
+.projects-table> :not(caption)>*>* {
+    background-color: $dash-dark !important;
+}
+
+.pagination {
+
+    li>span,
+    li>a {
+        background-color: $dash-darkest;
+    }
+}
