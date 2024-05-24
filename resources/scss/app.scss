@@ -1,4 +1,6 @@
 @use './partials/variables' as *;
+@use './partials/sidebar';
+@use './partials/main';
 @import '~bootstrap/scss/bootstrap';
 
 .bg-section-dark {

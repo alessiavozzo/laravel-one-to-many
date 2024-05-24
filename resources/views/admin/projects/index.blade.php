@@ -60,7 +60,7 @@
                                         <a class="text-decoration-none"
                                             href="{{ route('admin.types.show', $project->type) }}">{{ $project->type->name }}</a>
                                     @else
-                                        <p>no type</p>
+                                        N/A
                                     @endif
                                 </td>
 
