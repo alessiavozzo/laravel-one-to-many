@@ -9,12 +9,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Models\Type;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+
 class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index() : View
     {
         $types=Type::all();
         $projects = Project::orderByDesc('id')->paginate(8);
@@ -33,7 +36,7 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProjectRequest $request)
+    public function store(StoreProjectRequest $request) : RedirectResponse
     {
         $val_data = $request->validated();
         $slug = Str::slug($request->title, '-');
@@ -68,7 +71,7 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProjectRequest $request, Project $project)
+    public function update(UpdateProjectRequest $request, Project $project) : RedirectResponse
     {
         $val_data = $request->validated();
         $slug = Str::slug($request->title, '-');
@@ -89,7 +92,7 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function destroy(Project $project) : RedirectResponse
     {
         if($project->project_image){
             Storage::delete($project->project_image);

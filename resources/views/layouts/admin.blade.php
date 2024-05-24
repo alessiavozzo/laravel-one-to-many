@@ -31,7 +31,8 @@
         <div class="wrapper d-flex h-100">
 
             {{-- SIDEBAR --}}
-            <aside id="left-sidebar" class="w-auto h-100 d-flex flex-column text-white position-relative">
+            <aside id="left-sidebar"
+                class="w-auto h-100 d-flex flex-column text-white position-relative d-none d-md-flex">
                 {{-- title: top --}}
                 <div class="side-header px-5 py-2 d-flex justify-content-center align-items-center">
                     PORTFOLIO
@@ -81,8 +82,14 @@
                 </ul>
             </aside>
 
-            <main class="h-100 w-100">
-                @yield('content')
+            <main class=" main-admin h-100 w-100">
+                {{-- top-bar --}}
+                @include('admin.partials.navbar')
+
+                {{-- content --}}
+                <div class="content-wrapper p-4 h-100">
+                    @yield('content')
+                </div>
             </main>
 
 
