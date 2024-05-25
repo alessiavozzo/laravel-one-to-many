@@ -6,7 +6,7 @@
             <h2 class="text-light">New project</h2>
         </div>
     </div>
-    <section id="creation_form" class="py-3 bg-section">
+    <section id="creation_form" class="py-3 bg-section mb-5">
         <div class="container">
 
             <form data-bs-theme="dash-dark" class="form-control p-4 new-project" action="{{ route('admin.projects.store') }}"

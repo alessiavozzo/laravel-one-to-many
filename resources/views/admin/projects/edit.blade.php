@@ -6,7 +6,7 @@
             <h2 class="text-light">Edit project {{ $project->title }}</h2>
         </div>
     </div>
-    <section id="edit_form" class="py-3 bg-section">
+    <section id="edit_form" class="py-3 bg-section mb-5">
         <div class="container">
 
             <form data-bs-theme="dash-dark" class="form-control p-4 edit-project"

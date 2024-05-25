@@ -87,7 +87,7 @@
                 @include('admin.partials.navbar')
 
                 {{-- content --}}
-                <div class="content-wrapper px-4 pb-4 h-100 overflow-y-scroll">
+                <div class="content-wrapper p-4 h-100 overflow-y-scroll">
                     @yield('content')
                 </div>
             </main>

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <section id="all_projects">
+    <section id="all_projects" class="mb-5">
 
         <div class="card projects-card">
             <div class="card-header px-4 py-3 d-flex justify-content-between align-items-center">
@@ -12,7 +12,7 @@
             <div class="card-body p-4">
                 @include('admin.partials.session-messages')
                 <div class="table-responsive rounded">
-                    <table class="table projects-table table-dark table-hover m-0">
+                    <table data-bs-theme="dash-dark" class="table projects-table table-hover m-0">
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
