@@ -7,15 +7,7 @@
         background-color: $dash-bg-title;
 
         .add-btn {
-            background-image: linear-gradient(to right, $dash-portfolio-light, $dash-portfolio-dark);
-            color: $dash-text-light;
-            transition: all 0.3s ease-in-out;
-
-            &:hover {
-                background-color: $dash-darkest;
-                border: 1px solid $dash-portfolio-light;
-                background-image: none;
-            }
+            @include add-btn;
         }
     }
 

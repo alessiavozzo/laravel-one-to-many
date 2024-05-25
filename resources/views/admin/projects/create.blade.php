@@ -9,8 +9,8 @@
     <section id="creation_form" class="py-3 bg-section">
         <div class="container">
 
-            <form class="form-control bg-light p-4" action="{{ route('admin.projects.store') }}" method="post"
-                enctype="multipart/form-data">
+            <form data-bs-theme="dash-dark" class="form-control p-4 new-project" action="{{ route('admin.projects.store') }}"
+                method="post" enctype="multipart/form-data">
                 @csrf
 
                 {{-- title --}}
@@ -54,7 +54,7 @@
 
                 {{-- type --}}
                 <div class="mb-3">
-                    <label for="type_id" class="form-label">type</label>
+                    <label for="type_id" class="form-label"><strong>Type</strong></label>
                     <select class="form-select form-select" name="type_id" id="type_id">
                         <option selected disabled>Select type</option>
                         @foreach ($types as $type)
@@ -135,7 +135,7 @@
                     @enderror
                 </div>
 
-                <button class="btn btn-primary" type="submit">Add project</button>
+                <button class="btn add-btn" type="submit">Add project</button>
 
 
             </form>

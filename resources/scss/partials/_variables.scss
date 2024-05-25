@@ -11,9 +11,23 @@ $dash-portfolio-dark: rgb(255, 94, 0);
 $dash-text-light: white;
 $dash-danger: #EA5656;
 $dash-edit: #52ADE5;
+$dash-edit-dark: #5BA0DF;
+;
 
 @mixin d-flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@mixin add-btn {
+    background-image: linear-gradient(to right, $dash-portfolio-light, $dash-portfolio-dark);
+    color: $dash-text-light;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: $dash-darkest;
+        border: 1px solid $dash-portfolio-light;
+        background-image: none;
+    }
 }
