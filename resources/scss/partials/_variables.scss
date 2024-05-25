@@ -26,8 +26,8 @@ $dash-edit-dark: #5BA0DF;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-        background-color: $dash-darkest;
-        border: 1px solid $dash-portfolio-light;
+        background-color: $dash-darkest !important;
+        border: 1px solid $dash-portfolio-light !important;
         background-image: none;
     }
 }

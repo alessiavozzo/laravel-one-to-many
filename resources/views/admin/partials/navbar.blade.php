@@ -4,9 +4,11 @@
         <i class="fa-solid fa-house"></i>
         {{-- config('app.name', 'Laravel') --}}
     </a>
-    <div class="logo-sm px-3 text-white d-flex justify-content-center align-items-center d-md-none">
-        PORTFOLIO
-    </div>
+    @auth
+        <div class="logo-sm px-3 text-white d-flex justify-content-center align-items-center d-md-none">
+            PORTFOLIO
+        </div>
+    @endauth
 
     <button id="hamburger-btn" class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -16,28 +18,32 @@
 
     <div class="collapse navbar-collapse pt-2 justify-content-end" id="navbarSupportedContent">
         <!-- Left Side Of Navbar -->
-        <ul class="navbar-nav me-auto d-md-none">
-            <li class="nav-item">
-                <a class="nav-link text-white" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="{{ route('admin.types.index') }}">{{ __('Types') }}</a>
-            </li>
-        </ul>
+        @auth
+            <ul class="navbar-nav me-auto d-md-none">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('admin.types.index') }}">{{ __('Types') }}</a>
+                </li>
+            </ul>
+        @endauth
+
 
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
             <!-- Authentication Links -->
             @guest
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link text-white login-btn" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link text-white register-btn"
+                            href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                 @endif
             @else
