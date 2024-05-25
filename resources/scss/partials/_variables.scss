@@ -6,7 +6,14 @@ $dash-dark: #252935;
 $dash-bg-title: #3536439c;
 $dash-portfolio-light: orange;
 /* #FBB22E */
-$dash-portfolio-dark: rgb(255, 94, 0)
-    /* #F58B4B */
-;
+$dash-portfolio-dark: rgb(255, 94, 0);
+/* #F58B4B */
 $dash-text-light: white;
+$dash-danger: #EA5656;
+$dash-edit: #52ADE5;
+
+@mixin d-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

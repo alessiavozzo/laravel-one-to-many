@@ -9,7 +9,7 @@
         .add-btn {
             background-image: linear-gradient(to right, $dash-portfolio-light, $dash-portfolio-dark);
             color: $dash-text-light;
-            transition: all 0.5s ease-in-out;
+            transition: all 0.3s ease-in-out;
 
             &:hover {
                 background-color: $dash-darkest;
@@ -17,6 +17,34 @@
                 background-image: none;
             }
         }
+    }
+
+    .td-link:hover {
+        color: $dash-portfolio-light !important;
+    }
+
+    .type-link:hover {
+        box-shadow: 0 0 3px 2px $dash-text-light;
+    }
+
+    .view-btn,
+    .edit-btn,
+    .delete-btn {
+        background-color: $dash-darkest;
+        border: 1px solid $dash-text-light !important;
+        color: $dash-text-light !important;
+    }
+
+    .view-btn:hover {
+        background-image: linear-gradient(to right, $dash-portfolio-light, $dash-portfolio-dark);
+    }
+
+    .edit-btn:hover {
+        background-color: $dash-edit;
+    }
+
+    .delete-btn:hover {
+        background-color: $dash-danger;
     }
 }
 
@@ -26,8 +54,35 @@
 
 .pagination {
 
-    li>span,
+    @include d-flex-center;
+    padding-top: 1rem;
+    gap: 0.5rem;
+
+    li>.page-link,
     li>a {
         background-color: $dash-darkest;
+        border: none;
+        color: $dash-text-light;
     }
+
+    .page-item>.page-link {
+        border-radius: 50%;
+        width: 1rem;
+        padding: 0.7rem;
+        height: 1rem;
+        @include d-flex-center;
+    }
+
+    .page-item:not(.page-item:first-of-type, .page-item:last-of-type)>.page-link:hover {
+        background-color: $dash-portfolio-dark !important;
+    }
+
+    .page-item.active>.page-link {
+        background-color: $dash-portfolio-dark !important;
+    }
+
+}
+
+nav:has(.pagination) p.small {
+    display: none;
 }

@@ -46,16 +46,19 @@
                                                 alt="{{ $project->title }}">
                                         @endif
                                     </td>
-                                    <td><a class="text-decoration-none" href="{{ $project->preview }}">Video link</a></td>
+                                    <td><a class="td-link text-decoration-none text-white"
+                                            href="{{ $project->preview }}">Video link</a></td>
                                     {{-- <td>{{ $project->tools }}</td> --}}
-                                    <td><a class="text-decoration-none" href="{{ $project->project_link }}">Project link</a>
+                                    <td><a class="td-link text-decoration-none text-white"
+                                            href="{{ $project->project_link }}">Project link</a>
                                     </td>
-                                    <td><a class="text-decoration-none" href="{{ $project->github_link }}">Github link</a>
+                                    <td><a class="td-link text-decoration-none text-white"
+                                            href="{{ $project->github_link }}">Github link</a>
                                     </td>
 
                                     <td>
                                         @if ($project->type)
-                                            <a class="text-decoration-none badge"
+                                            <a class=" type-link text-decoration-none badge p-2"
                                                 style="background-color: {{ $project->type->color }}"
                                                 href="{{ route('admin.types.show', $project->type) }}">{{ $project->type->name }}</a>
                                         @else
@@ -65,14 +68,14 @@
 
                                     <td>{{ $project->creation_date }}</td>
                                     <td style="width: 15%">
-                                        <a class="btn btn-primary" href="{{ route('admin.projects.show', $project) }}">
+                                        <a class="btn view-btn" href="{{ route('admin.projects.show', $project) }}">
                                             <i class="fa-solid fa-eye"></i>
                                         </a>
-                                        <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project) }}">
+                                        <a class="btn edit-btn" href="{{ route('admin.projects.edit', $project) }}">
                                             <i class="fa-solid fa-pencil"></i>
                                         </a>
 
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                        <button type="button" class="btn delete-btn" data-bs-toggle="modal"
                                             data-bs-target="#modalId-{{ $project->id }}">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
