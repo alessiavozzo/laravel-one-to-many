@@ -15,12 +15,6 @@
     }
 
     .edit-btn {
-        background-color: $dash-edit;
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-            background-color: $dash-edit-dark;
-            border: 1px solid $dash-text-light;
-        }
+        @include edit-btn;
     }
 }

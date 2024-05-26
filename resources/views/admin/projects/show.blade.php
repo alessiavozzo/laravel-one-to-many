@@ -84,6 +84,18 @@
                                 allowfullscreen></iframe>
                         </div>
                     @endif
+
+                    <div class="actions mt-4 d-flex gap-3 justify-content-center">
+                        <a class="btn edit-btn" href="{{ route('admin.projects.edit', $project) }}">
+                            Edit
+                        </a>
+
+                        <button type="button" class="btn delete-btn" data-bs-toggle="modal"
+                            data-bs-target="#modalId-{{ $project->id }}">
+                            Delete
+                        </button>
+                        @include('admin.partials.modal-delete')
+                    </div>
                 </div>
             </div>
         </div>

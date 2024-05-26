@@ -31,3 +31,24 @@ $dash-edit-dark: #5BA0DF;
         background-image: none;
     }
 }
+
+@mixin edit-btn {
+
+    background-color: $dash-edit !important;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: $dash-edit-dark !important;
+        border: 1px solid $dash-text-light !important;
+    }
+
+}
+
+@mixin delete-btn {
+    background-color: $dash-danger !important;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        border: 1px solid $dash-text-light !important;
+    }
+}
