@@ -94,7 +94,7 @@
                             data-bs-target="#modalId-{{ $project->id }}">
                             Delete
                         </button>
-                        @include('admin.partials.modal-delete')
+                        @include('admin.partials.project-delete')
                     </div>
                 </div>
             </div>

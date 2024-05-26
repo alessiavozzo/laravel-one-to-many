@@ -22,9 +22,10 @@ class ProjectController extends Controller
     {
 
         /* to make filter work */
-        if($request->input() != null){
+        //dd($request->type_id);
+        if($request->filled('type_id')){
             /* dd($request->input('type_id')) */
-            $typeId= $request->input('type_id');            
+            $typeId= $request->type_id;            
             $projects = Project::orderByDesc('id')->where('type_id', $typeId)->paginate(8);
         }
         else{

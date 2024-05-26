@@ -9,7 +9,7 @@
                 <h3 class="text-white">My Projects</h3>
                 <div class="add-filter d-flex gap-5 justify-content-center align-items-center">
 
-                    {{-- TEST --}}
+                    {{-- Filter by type --}}
 
                     <form data-bs-theme="dash-dark" class="d-flex justify-content-end align-items-center gap-2"
                         action="{{ route('admin.projects.index') }}" method="get">
@@ -26,8 +26,6 @@
                         <button class="btn filter-btn" type="submit">Filter</button>
                         <a class="btn filter-btn" href="{{ route('admin.projects.index') }}">Cancel</a>
                     </form>
-
-                    {{-- ENDTEST --}}
 
                     <a class="btn add-btn" href="{{ route('admin.projects.create') }}">Add new project</a>
                 </div>
@@ -104,7 +102,7 @@
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
 
-                                        @include('admin.partials.modal-delete')
+                                        @include('admin.partials.project-delete')
 
                                     </td>
                                 </tr>
