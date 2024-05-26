@@ -11,16 +11,26 @@ use Illuminate\Support\Str;
 use App\Models\Type;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index() : View
+    public function index(Request $request) : View
     {
+
+        /* to make filter work */
+        if($request->input() != null){
+            /* dd($request->input('type_id')) */
+            $typeId= $request->input('type_id');            
+            $projects = Project::orderByDesc('id')->where('type_id', $typeId)->paginate(8);
+        }
+        else{
+            $projects = Project::orderByDesc('id')->paginate(8);
+        }
         $types=Type::all();
-        $projects = Project::orderByDesc('id')->paginate(8);
         return view('admin.projects.index', compact('projects', 'types'));
     }
 

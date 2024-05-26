@@ -38,6 +38,23 @@
     .delete-btn:hover {
         background-color: $dash-danger !important;
     }
+
+    select:focus {
+        border-color: $dash-filter-dark !important;
+        box-shadow: 0 0 3px 0.5px $dash-filter-light !important;
+    }
+
+    .filter-btn {
+        background-image: linear-gradient(to right, $dash-filter-light, $dash-filter-dark);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: $dash-darkest !important;
+            border: 1px solid $dash-filter-dark !important;
+            color: $dash-text-light;
+            background-image: none;
+        }
+    }
 }
 
 /* .projects-table> :not(caption)>*>* {

@@ -3,10 +3,34 @@
 @section('content')
     <section id="all_projects" class="mb-5">
 
+
         <div class="card projects-card">
             <div class="card-header px-4 py-3 d-flex justify-content-between align-items-center">
                 <h3 class="text-white">My Projects</h3>
-                <a class="btn add-btn" href="{{ route('admin.projects.create') }}">Add new project</a>
+                <div class="add-filter d-flex gap-5 justify-content-center align-items-center">
+
+                    {{-- TEST --}}
+
+                    <form data-bs-theme="dash-dark" class="d-flex justify-content-end align-items-center gap-2"
+                        action="{{ route('admin.projects.index') }}" method="get">
+                        {{-- type --}}
+                        <div class="">
+                            <select class="form-select form-select" name="type_id" id="type_id">
+                                <option selected disabled>All</option>
+                                @foreach ($types as $type)
+                                    <option value="{{ $type->id }}" {{ $type->id == old('type_id') ? 'selected' : '' }}>
+                                        {{ $type->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <button class="btn filter-btn" type="submit">Filter</button>
+                        <a class="btn filter-btn" href="{{ route('admin.projects.index') }}">Cancel</a>
+                    </form>
+
+                    {{-- ENDTEST --}}
+
+                    <a class="btn add-btn" href="{{ route('admin.projects.create') }}">Add new project</a>
+                </div>
             </div>
 
             <div class="card-body p-4">
