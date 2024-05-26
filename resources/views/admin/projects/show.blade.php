@@ -32,7 +32,7 @@
                 <div class="card-body position-relative">
                     <h4 class="card-title text-center mb-3">{{ $project->title }}</h4>
                     {{-- id --}}
-                    <div class="card-text card-id position-absolute end-0 top-0 me-3">
+                    <div class="card-text card-id position-absolute end-0 top-0 me-3 text-white">
                         {{ $project->id }}
                     </div>
                     {{-- slug --}}

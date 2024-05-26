@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form action="{{ route('admin.types.update', $type) }}" method="post">
+        <form data-bs-theme="dash-dark" action="{{ route('admin.types.update', $type) }}" method="post">
             @csrf
 
             @method('PUT')
@@ -22,7 +22,8 @@
             <div class="mb-3">
                 <label for="description"
                     class="form-label @error('description') is-invalid @enderror"><strong>Description</strong></label>
-                <textarea class="form-control" name="description" id="description" rows="8">{{ old('description', $type->description) }}</textarea>
+                <textarea class="form-control" placeholder="A brief text describing the project type" name="description"
+                    id="description" rows="8">{{ old('description', $type->description) }}</textarea>
                 @error('description')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
