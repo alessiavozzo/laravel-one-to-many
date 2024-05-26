@@ -2,6 +2,10 @@
 
 @section('content')
     <div class="projects_header bg-section-dark py-2">
+        <a href="{{ route('admin.projects.index') }}" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>back</span>
+        </a>
         <div class="container">
             <h2 class="text-light">New project</h2>
         </div>

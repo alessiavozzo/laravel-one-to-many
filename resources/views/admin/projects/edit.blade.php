@@ -2,6 +2,10 @@
 
 @section('content')
     <div class="projects_header bg-section-dark py-2">
+        <a href="{{ route('admin.projects.index') }}" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>back</span>
+        </a>
         <div class="container d-flex justify-content-between align-items-center">
             <h2 class="text-light">Edit project {{ $project->title }}</h2>
         </div>

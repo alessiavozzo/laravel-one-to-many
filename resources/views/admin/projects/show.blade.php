@@ -19,6 +19,10 @@
     </div> --}}
 
     <section id="project" class="py-3 bg-section mb-5">
+        <a href="{{ route('admin.projects.index') }}" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>back</span>
+        </a>
         <div class="container">
             <div data-bs-theme="dash-dark" class="card w-75 mx-auto">
 

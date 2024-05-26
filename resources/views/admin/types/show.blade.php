@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
+    <a href="{{ route('admin.types.index') }}" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>back</span>
+    </a>
     <div class="container" data-bs-theme="dash-dark">
 
 
